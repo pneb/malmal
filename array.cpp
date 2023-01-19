@@ -1,4 +1,5 @@
 #include "array.h"
+#include <numeric>
 
 Array::Array(int* arr, int n) {
     this->arr = arr;
@@ -27,11 +28,11 @@ void Array::print() {
 }
 
 void Array::sort() {
-    sort(arr, arr + n);
+    std::sort(arr, arr + n);
 }
 
 int Array::find(int num) {
-    return find(arr, arr + n, num) - arr;
+    return std::find(arr, arr + n, num) - arr;
 }
 
 int Array::max() {
@@ -43,7 +44,7 @@ int Array::min() {
 }
 
 int Array::count(int num) {
-    return count(arr, arr + n, num);
+    return std::count(arr, arr + n, num);
 }
 
 int Array::avg() {
